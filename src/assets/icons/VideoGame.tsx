@@ -1,10 +1,7 @@
-// Packages
 import { FC } from "react";
+import { IconProps } from "../../DTOs/icon.model";
 
-// Files
-import { IIconProps } from "../../DTOs/interfaces/icon.model";
-
-const VideoGame: FC<IIconProps> = ({
+export const VideoGame: FC<IconProps> = ({
   width = "40px",
   height = "25px",
   fill,
@@ -55,5 +52,3 @@ const VideoGame: FC<IIconProps> = ({
     </svg>
   );
 };
-
-export default VideoGame;

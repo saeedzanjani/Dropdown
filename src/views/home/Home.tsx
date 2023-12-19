@@ -1,15 +1,7 @@
-// Packages
-import { FC, ReactElement } from "react";
+import DropDownMenu from "../../components/dropDownMenu";
 
-// Components
-import DropDownMenu from "../../components/menu/DropDownMenu";
-
-const Home: FC = (): ReactElement => {
-  return (
-    <div>
-      <DropDownMenu />
-    </div>
-  );
+const Home = () => {
+  return <DropDownMenu />;
 };
 
 export default Home;

@@ -1,0 +1,10 @@
+@import "../../../styles/index";
+
+.root {
+    box-shadow: $shadow-low;
+    border-radius: $radius-low;
+    border: none;
+    padding: 0 20px;
+    height: 40px;
+    width: $w-full;
+}

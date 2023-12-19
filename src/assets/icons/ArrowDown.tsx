@@ -1,10 +1,7 @@
-// Packages
 import { FC } from "react";
+import { IconProps } from "../../DTOs/icon.model";
 
-// Files
-import { IIconProps } from "../../DTOs/interfaces/icon.model";
-
-const ArrowDown: FC<IIconProps> = ({
+export const ArrowDown: FC<IconProps> = ({
   width = "15px",
   height = "15px",
   fill,
@@ -30,5 +27,3 @@ const ArrowDown: FC<IIconProps> = ({
     </svg>
   );
 };
-
-export default ArrowDown;

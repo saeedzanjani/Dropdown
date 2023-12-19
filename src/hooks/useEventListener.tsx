@@ -1,23 +1,21 @@
-// Packages
 import { useEffect, useRef } from "react";
 
 const useEventListener = (
   eventType: string = "",
-  listener: Function = () => null,
-  target: any = window,
-  options: any = null
+  listener: (event: MouseEvent | TouchEvent) => void,
+  target: Window | HTMLElement = window,
+  options: boolean | AddEventListenerOptions = false
 ) => {
-  // Hooks
-  const savedListener = useRef<HTMLDivElement | any>();
+  const savedListener = useRef<(event: MouseEvent | TouchEvent) => void>();
 
-  // Lifecycle
   useEffect(() => {
     savedListener.current = listener;
   }, [listener]);
 
   useEffect(() => {
     if (!target.addEventListener) return;
-    const eventListener = (e: any) => savedListener.current(e);
+    const eventListener: EventListener = (e: Event) =>
+      savedListener.current?.(e as MouseEvent | TouchEvent);
     target.addEventListener(eventType, eventListener, options);
 
     return () => {

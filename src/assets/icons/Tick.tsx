@@ -1,10 +1,7 @@
-// Packages
 import { FC } from "react";
+import { IconProps } from "../../DTOs/icon.model";
 
-// Files
-import { IIconProps } from "../../DTOs/interfaces/icon.model";
-
-const Tick: FC<IIconProps> = ({
+export const Tick: FC<IconProps> = ({
   width = "40px",
   height = "25px",
   fill = "none",
@@ -39,5 +36,3 @@ const Tick: FC<IIconProps> = ({
     </svg>
   );
 };
-
-export default Tick;

@@ -1,20 +1,11 @@
-// Pakages
-import Routes from "./routes";
-import { ThemeProvider } from "react-jss";
-
-// Components
-import Layout from "./layouts";
-
-// Files
-import { theme } from "./theme";
+import MainLayout from "./layouts";
+import Home from "./views/home/Home";
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <Layout>
-        <Routes />
-      </Layout>
-    </ThemeProvider>
+      <MainLayout>
+        <Home />
+      </MainLayout>
   );
 }
 

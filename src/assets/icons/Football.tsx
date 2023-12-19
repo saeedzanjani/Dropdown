@@ -1,10 +1,7 @@
-// Packages
 import { FC } from "react";
+import { IconProps } from "../../DTOs/icon.model";
 
-// Files
-import { IIconProps } from "../../DTOs/interfaces/icon.model";
-
-const Football: FC<IIconProps> = ({
+export const Football: FC<IconProps> = ({
   width = "40px",
   height = "25px",
   fill,
@@ -34,5 +31,3 @@ const Football: FC<IIconProps> = ({
     </svg>
   );
 };
-
-export default Football;

@@ -1,13 +1,12 @@
-import { ReactNode } from "react";
-import { useStyles } from "./styles";
+import { ReactNode, FC } from "react";
+import styles from "./MainLayout.module.scss";
 
-interface ILayoutProps {
+type MainLayoutProps = {
   children: ReactNode;
-}
-
-const Layout = ({ children }: ILayoutProps) => {
-  const classes = useStyles();
-  return <div className={classes.root}>{children}</div>;
 };
 
-export default Layout;
+const MainLayout: FC<MainLayoutProps> = ({ children }) => {
+  return <div className={styles.root}>{children}</div>;
+};
+
+export default MainLayout;

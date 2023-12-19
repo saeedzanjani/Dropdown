@@ -1,0 +1,14 @@
+@import "../../../styles/index";
+
+.root {
+    width: 100px;
+    height: 40px;
+    background: $color-blue;
+    color: $color-light;
+    font-size: $font-md;
+    padding: 10px 20px;
+    border-radius: $radius-high;
+    border: none;
+    margin: 10px;
+    cursor: pointer;
+}

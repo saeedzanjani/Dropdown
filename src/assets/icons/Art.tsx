@@ -1,10 +1,7 @@
-// Packages
 import { FC } from "react";
+import { IconProps } from "../../DTOs/icon.model";
 
-// Files
-import { IIconProps } from "../../DTOs/interfaces/icon.model";
-
-const Art: FC<IIconProps> = ({
+export const Art: FC<IconProps> = ({
   width = "40px",
   height = "25px",
   fill = "#000000",
@@ -61,4 +58,4 @@ const Art: FC<IIconProps> = ({
   );
 };
 
-export default Art;
+// export default Art;

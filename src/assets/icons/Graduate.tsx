@@ -1,10 +1,7 @@
-// Packages
 import { FC } from "react";
+import { IconProps } from "../../DTOs/icon.model";
 
-// Files
-import { IIconProps } from "../../DTOs/interfaces/icon.model";
-
-const Graduate: FC<IIconProps> = ({
+export const Graduate: FC<IconProps> = ({
   width = "40px",
   height = "25px",
   fill,
@@ -45,5 +42,3 @@ const Graduate: FC<IIconProps> = ({
     </svg>
   );
 };
-
-export default Graduate;

@@ -1,10 +1,7 @@
-// Packages
 import { FC } from "react";
+import { IconProps } from "../../DTOs/icon.model";
 
-// Files
-import { IIconProps } from "../../DTOs/interfaces/icon.model";
-
-const Health: FC<IIconProps> = ({
+export const Health: FC<IconProps> = ({
   width = "40px",
   height = "25px",
   fill,
@@ -32,5 +29,3 @@ const Health: FC<IIconProps> = ({
     </svg>
   );
 };
-
-export default Health;

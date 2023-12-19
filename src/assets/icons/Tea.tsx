@@ -1,10 +1,7 @@
-// Packages
 import { FC } from "react";
+import { IconProps } from "../../DTOs/icon.model";
 
-// Files
-import { IIconProps } from "../../DTOs/interfaces/icon.model";
-
-const Tea: FC<IIconProps> = ({
+export const Tea: FC<IconProps> = ({
   width = "40px",
   height = "25px",
   fill,
@@ -89,5 +86,3 @@ const Tea: FC<IIconProps> = ({
     </svg>
   );
 };
-
-export default Tea;

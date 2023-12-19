@@ -1,3 +1,14 @@
+# DropDown Project
+A dropdown menu Project that can be used to display a list of options.
+
+Dropdown menu is a React-Typescript project that implements a dropdown menu component using custom hooks. It is built with TypeScript and styled using SCSS.
+
+# Technologies Used
+React
+TypeScript
+SCSS
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
