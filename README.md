@@ -3,6 +3,8 @@ A dropdown menu Project that can be used to display a list of options.
 
 Dropdown menu is a React-Typescript project that implements a dropdown menu component using custom hooks. It is built with TypeScript and styled using SCSS.
 
+You can add new item to dropdown list by click on "Enter" Keyboard which show form to add new item and you can close it by "Enter" Keyboard
+
 # Technologies Used
 React
 TypeScript

@@ -5,16 +5,15 @@ import styles from "./DropDownBody.module.scss";
 interface IDropDownBodyProps {
   list?: DropDownMenuItemType[];
   selectedItem: DropDownMenuItemType | undefined;
-  setSelectedItem: Function;
   up: boolean;
   setUp: Function;
+  handleSelect: Function;
 }
 
 const DropDownBody = ({
   list,
   selectedItem,
-  setSelectedItem,
-  setUp,
+  handleSelect,
 }: IDropDownBodyProps) => {
   return (
     <ul className={styles.body}>
@@ -23,10 +22,8 @@ const DropDownBody = ({
           <DropDownItem
             key={menuItem?.id}
             item={menuItem}
-            setUp={setUp}
-            list={list}
             selectedItem={selectedItem}
-            setSelectedItem={setSelectedItem}
+            handleSelect={handleSelect}
           />
         ))}
     </ul>

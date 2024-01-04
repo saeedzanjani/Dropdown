@@ -31,7 +31,7 @@ const NewDropDownMenuItem: FC<NewMenuItemProps> = ({
       setValues({ newItem: "" });
       addNewItemHandler(false);
       dropDownList.push(item);
-    } else return
+    } else return;
   }, [dropDownList, values, setValues, addNewItemHandler]);
 
   return (

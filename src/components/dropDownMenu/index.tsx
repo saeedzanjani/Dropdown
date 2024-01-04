@@ -1,22 +1,26 @@
-import { useEffect, useState } from "react";
+import { FC, useState } from "react";
 import NewDropDownMenuItem from "./newMenuItem/NewDropDownMenuItem";
 import DropDown from "../shared/dropDown";
 import useEventListener from "../../hooks/useEventListener";
-
 import { DropDownMenuItemType } from "../../DTOs/dropDown.model";
-import { DROPDOWN_ITEMS } from "../../utils/mockData";
+import useDropDown from "../../hooks/useDropDown";
 
-const DropDownMenu = () => {
+type DropDownMenuProps = {
+  DropDownList: DropDownMenuItemType[];
+};
+
+const DropDownMenu: FC<DropDownMenuProps> = ({ DropDownList }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [dropList, setDropList] = useState<DropDownMenuItemType[]>([]);
-  const [up, setUp] = useState<boolean>(false);
+
+  const { up, setUp, dropList, handleSelect, selectedItem } =
+    useDropDown(DropDownList);
 
   useEventListener(
     "keyup",
     (e: Event) => {
       const keyboardEvent = e as KeyboardEvent;
       if (keyboardEvent.key === "Enter") {
-        setIsOpen(!isOpen);
+        setIsOpen((prevValue) => !prevValue);
       }
     },
     window
@@ -28,17 +32,10 @@ const DropDownMenu = () => {
       if (isOpen) {
         setIsOpen(false);
       }
-      if (up) {
-        setUp(false);
-      }
     },
     window,
     false
   );
-
-  useEffect(() => {
-    setDropList(DROPDOWN_ITEMS);
-  }, []);
 
   const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
     e.stopPropagation();
@@ -47,7 +44,13 @@ const DropDownMenu = () => {
   return (
     <div onClick={handleClick}>
       {!isOpen ? (
-        <DropDown dropDownList={dropList} up={up} setUp={setUp} />
+        <DropDown
+          dropDownList={dropList}
+          up={up}
+          setUp={setUp}
+          handleSelect={handleSelect}
+          selectedItem={selectedItem}
+        />
       ) : (
         <NewDropDownMenuItem
           dropDownList={dropList}

@@ -1,35 +1,20 @@
-import { ComponentType, FC, ReactElement, ReactNode, memo, useCallback } from "react";
+import { ComponentType, FC, memo } from "react";
 import { Tick } from "../../../../assets/icons/Tick";
 import { DropDownMenuItemType } from "../../../../DTOs/dropDown.model";
 import styles from "./DropDownItem.module.scss";
 
 type DropDownItemProps = {
   item: DropDownMenuItemType;
-  list?: DropDownMenuItemType[];
   selectedItem?: DropDownMenuItemType | undefined;
-  setSelectedItem: Function;
-  setUp: Function;
+  handleSelect: Function;
 };
 
 const DropDownItem: FC<DropDownItemProps> = ({
   item,
-  list,
   selectedItem,
-  setSelectedItem,
-  setUp,
+  handleSelect,
 }) => {
   const Icon: ComponentType<{}> | null = item.icon as ComponentType<{}> | null;
-  const handleSelect = useCallback(
-    (id: number) => () => {
-      const selected = list?.find(
-        (item: DropDownMenuItemType) => +item?.id === +id
-      );
-      setSelectedItem(null);
-      setSelectedItem(selected);
-      setUp(false);
-    },
-    [list, setSelectedItem, setUp]
-  );
 
   return (
     <li

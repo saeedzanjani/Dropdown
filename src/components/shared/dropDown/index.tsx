@@ -1,4 +1,4 @@
-import { useEffect, useState, memo, FC, useMemo } from "react";
+import { memo, FC, useMemo } from "react";
 import DropDownHeader from "./dropDownHeader";
 import styles from "./DropDown.module.scss";
 import { DropDownMenuItemType } from "../../../DTOs/dropDown.model";
@@ -8,26 +8,25 @@ import DropDownBody from "./dropDownBody";
 export type DropDownProps = {
   dropDownList?: DropDownMenuItemType[];
   up: boolean;
-  setUp: Function
+  setUp: Function;
+  selectedItem: DropDownMenuItemType | undefined;
+  handleSelect: Function;
 };
 
-const DropDown: FC<DropDownProps> = ({ dropDownList, up, setUp }) => {
-  const [selectedItem, setSelectedItem] = useState<
-    DropDownMenuItemType | undefined
-  >();
-
-
+const DropDown: FC<DropDownProps> = ({
+  dropDownList,
+  up,
+  setUp,
+  selectedItem,
+  handleSelect,
+}) => {
   const menuIcon = useMemo(() => {
-    return !up ? <ArrowDown /> : <ArrowUp />
-  }, [up])
+    return !up ? <ArrowDown /> : <ArrowUp />;
+  }, [up]);
 
   const toggleIcon = () => {
-    setUp(!up);
+    setUp((prevValue: boolean) => !prevValue);
   };
-
-  useEffect(() => {
-    setSelectedItem(dropDownList?.[1]);
-  }, [dropDownList, setSelectedItem]);
 
   return (
     <div className={styles.root}>
@@ -45,7 +44,7 @@ const DropDown: FC<DropDownProps> = ({ dropDownList, up, setUp }) => {
           selectedItem={selectedItem}
           up={up}
           setUp={setUp}
-          setSelectedItem={setSelectedItem}
+          handleSelect={handleSelect}
         />
       )}
     </div>
